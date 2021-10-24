@@ -1,0 +1,2 @@
+# national-park-service-web-app
+Web application, using the National Park Services' API, that can search from a list of activities to do at different National Parks, retrieve data from park web cams based on which National Park(s) the user selects, pull up informational pages so visitors can learn more about the various parks, and display non-streaming images collected from park web cams so a visitor can view them with ease.
