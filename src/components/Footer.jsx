@@ -76,7 +76,7 @@ const Footer = () => {
           <div className="social-icons">
             <Link
               className="social-icon-link facebook"
-              to="/"
+              to={{ pathname: "https://www.facebook.com/nationalparkservice/" }}
               target="_blank"
               aria-labe="Facebook"
             >
@@ -84,7 +84,10 @@ const Footer = () => {
             </Link>
             <Link
               className="social-icon-link instagram"
-              to="/"
+              to={{
+                pathname:
+                  "https://www.instagram.com/nationalparkservice/?hl=en",
+              }}
               target="_blank"
               aria-labe="Instagram"
             >
@@ -92,7 +95,10 @@ const Footer = () => {
             </Link>
             <Link
               className="social-icon-link youtube"
-              to="/"
+              to={{
+                pathname:
+                  "https://www.youtube.com/channel/UCj_0DU9KRP_bQp_cOL4Ljbg",
+              }}
               target="_blank"
               aria-labe="Youtube"
             >
@@ -100,7 +106,10 @@ const Footer = () => {
             </Link>
             <Link
               className="social-icon-link twitter"
-              to="/"
+              to={{
+                pathname:
+                  "https://twitter.com/NatlParkService?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+              }}
               target="_blank"
               aria-labe="Twitter"
             >

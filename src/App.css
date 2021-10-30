@@ -6,7 +6,7 @@
 }
 
 .home,
-.services,
+.activities,
 .products,
 .sign-up {
   display: flex;
@@ -16,7 +16,7 @@
   font-size: 3rem;
 }
 
-.services {
+.activities {
   background-image: url("./images/img-2.jpg");
   background-position: center;
   background-size: cover;
@@ -41,4 +41,13 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+}
+
+.ActivitySearch {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
 }

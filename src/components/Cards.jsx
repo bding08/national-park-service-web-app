@@ -15,13 +15,13 @@ const Cards = () => {
               src={img9}
               text="Explore the beautiful waterfalls"
               label="Adventure"
-              path="/services"
+              path="/activities"
             />
             <CardItem
               src={img2}
               text="Explore the beautiful waterfalls"
               label="Adventure"
-              path="/services"
+              path="/activities"
             />
           </ul>
           <ul className="cards__items">
@@ -29,19 +29,19 @@ const Cards = () => {
               src={img2}
               text="Explore the beautiful waterfalls"
               label="Adventure"
-              path="/services"
+              path="/activities"
             />
             <CardItem
               src={img2}
               text="Explore the beautiful waterfalls"
               label="Adventure"
-              path="/services"
+              path="/activities"
             />
             <CardItem
               src={img2}
               text="Explore the beautiful waterfalls"
               label="Adventure"
-              path="/services"
+              path="/activities"
             />
           </ul>
         </div>
