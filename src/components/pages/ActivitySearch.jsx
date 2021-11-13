@@ -3,7 +3,7 @@ import HeroSection from "../HeroSection";
 import React from "react";
 import ActivityAPISearch from "../API/ActivityAPISearch";
 
-const Activities = () => {
+const ActivitySearch = () => {
   return (
     <>
       <ActivityAPISearch placeholder="Enter an Activity Name..." />
@@ -11,4 +11,4 @@ const Activities = () => {
   );
 };
 
-export default Activities;
+export default ActivitySearch;

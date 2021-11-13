@@ -4,7 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import Footer from "./components/Footer";
-import Activities from "./components/pages/Activities";
+import ActivitySearch from "./components/pages/ActivitySearch";
+import Webcam from "./components/pages/WebcamSearch";
+import Park from "./components/pages/ParkNames";
+
+import ParksWithActivity from "./components/pages/ActivityParks";
+import ParksContainingActivity from "./components/API/ParksContainingActivity";
+import ActivityParks from "./components/pages/ActivityParks";
 
 function App() {
   return (
@@ -13,7 +19,12 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/activities" exact component={Activities} />
+          <Route path="/activities" exact component={ActivitySearch} />
+          <Route path="/webcam" exact component={Webcam} />
+          <Route path="/parks" exact component={Park} />
+
+          <Route path="/parkactivity" exact component={ActivityParks} />
+
           {/*<Route path="products" component={Products} />
           <Route path="sign-up" component={Sign - up} />  */}
         </Switch>

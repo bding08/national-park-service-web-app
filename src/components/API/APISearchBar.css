@@ -59,9 +59,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+/* makes the navbar labels lightgrey as well */
+/* a:hover {
   background-color: lightgrey;
-}
+} */
 
 #clearBtn {
   cursor: pointer;

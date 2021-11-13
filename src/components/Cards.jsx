@@ -43,6 +43,12 @@ const Cards = () => {
               label="Adventure"
               path="/activities"
             />
+            <CardItem
+              src={img2}
+              text="Explore the beautiful waterfalls"
+              label="Adventure"
+              path="/activities"
+            />
           </ul>
         </div>
       </div>

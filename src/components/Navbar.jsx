@@ -36,8 +36,12 @@ const Navbar = () => {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+              <Link
+                to="/webcam"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Webcams
               </Link>
             </li>
             <li className="nav-item">
@@ -50,13 +54,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/parks" className="nav-links" onClick={closeMobileMenu}>
+              <Link
+                to="/parkactivity"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
                 Parks
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/sign-up"
+                to="/parkactivity"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >

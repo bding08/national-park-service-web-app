@@ -1,40 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
 import "./APISearchBar.css";
 
-function ActivityAPISearch({ placeholder }) {
-  const url = `https://developer.nps.gov/api/v1/activities/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb`;
-
+const ParkNameSearch = ({ placeholder }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
-  const [activities, setActivities] = useState({
+  const [parkName, setParkName] = useState({
     data: null,
   });
 
+  const url = `https://developer.nps.gov/api/v1/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=465`;
+
   useEffect(() => {
-    setActivities({
+    setParkName({
       data: null,
     });
     axios.get(url).then((response) => {
-      setActivities(response.data);
+      setParkName(response.data);
     });
-
-    // do catching at a later time
-    // .catch(() => {
-    //   setActivities({
-    //     data: null,
-    //   });
-    // });
   }, [url]);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = activities.data.filter((value) => {
+    const newFilter = parkName.data.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -70,27 +62,16 @@ function ActivityAPISearch({ placeholder }) {
       {filteredData.length != 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
-            console.log(value.name);
-
             return (
-              <Link
-                className="dataItem"
-                to={{
-                  pathname: "/parkactivity",
-                  state: value.name,
-                }}
-              >
-                {value.name}
-              </Link>
-              // <a className="dataItem" href="/parkactivity">
-              //   <p>{value.name} </p>
-              // </a>
+              <a className="dataItem" href={value.url} target="_blank">
+                <p>{value.fullName} </p>
+              </a>
             );
           })}
         </div>
       )}
     </div>
   );
-}
+};
 
-export default ActivityAPISearch;
+export default ParkNameSearch;
