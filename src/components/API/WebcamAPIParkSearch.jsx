@@ -64,7 +64,6 @@ const WebcamAPIParkSearch = ({ placeholder }) => {
       {filteredData.length != 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
-            console.log(value);
             return (
               <Link
                 className="dataItem"

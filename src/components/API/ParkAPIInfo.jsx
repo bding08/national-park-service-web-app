@@ -7,6 +7,7 @@ const ParkAPIInfo = (props) => {
 
   const parkInfoURL = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb`;
 
+  console.log(parkInfoURL);
   const [parkInfo, setParkInfo] = useState({
     data: null,
     // activity: props.activty,

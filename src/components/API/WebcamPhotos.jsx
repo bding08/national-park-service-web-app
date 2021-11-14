@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import CardItem from "../CardItem";
+import { LocalConvenienceStoreOutlined } from "@material-ui/icons";
 
 const WebcamPhotos = (props) => {
   const parkCode = props.webCamParkCode;
@@ -25,15 +26,42 @@ const WebcamPhotos = (props) => {
   }, [webcamsURL]);
 
   let content = null;
+  console.log(content);
 
   if (parkWebcamURLs.data) {
-    content = parkWebcamURLs.data.map((cam) => (
-      <div>
-        {cam.images.map((image) => (
-          <img src={image.url} alt={image.altText} />
-        ))}
-      </div>
-    ));
+    if (parkWebcamURLs.total > 0) {
+      content = parkWebcamURLs.data.map((cam) => (
+        <div>
+          <div className="cards__container">
+            <div className="cards__wrapper">
+              <u1 className="cards__items">
+                {cam.images.map((image) => (
+                  <CardItem
+                    src={image.url}
+                    text={image.caption}
+                    label="Adventure"
+                    path="/activities"
+                  />
+                  // <img src={image.url} alt={image.altText} />
+                ))}
+              </u1>
+            </div>
+          </div>
+        </div>
+      ));
+    } else {
+      content = (
+        <div>
+          <div className="cards__container">
+            <div className="cards__wrapper">
+              <u1 className="cards__items">No images</u1>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  } else {
+    content = <div> No images </div>;
   }
 
   if (parkWebcamURLs.data) {
