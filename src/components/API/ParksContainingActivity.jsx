@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const ParksContainingActivity = (props) => {
   const activity = props.activity;
@@ -24,14 +25,43 @@ const ParksContainingActivity = (props) => {
 
   if (parksContainingActivity.data) {
     content = parksContainingActivity.data[0].parks.map(
-      (parkContainingActivity) => <div>{parkContainingActivity.fullName}</div>
+      (parkContainingActivity) => (
+        <div>
+          <p>
+            <Link
+              to={{
+                className: "dataItem",
+                pathname: "/parkinfo",
+                state: { parkCode: parkContainingActivity.parkCode },
+              }}
+            >
+              {parkContainingActivity.fullName}
+            </Link>
+          </p>
+        </div>
+      )
     );
   }
 
   return (
     <div>
-      <h1 className="font-bold text-2x1 mb-3">Parks Containing {activity}</h1>
-      {content}
+      <div>
+        <h1 className="font-bold text-2x1 mb-3">Parks Containing {activity}</h1>
+        {/* <Link
+        className="dataItem"
+        to={{
+          pathname: "/parkinfo",
+          state: parkContainingActivity.parkCode,
+        }}
+      >
+        {content}
+      </Link> */}
+
+        {/* <a className="dataItem" href="/parkinfo"> */}
+        {content}
+
+        {/* </a> */}
+      </div>
     </div>
   );
 };

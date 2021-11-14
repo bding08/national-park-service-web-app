@@ -11,6 +11,7 @@ import Park from "./components/pages/ParkNames";
 import ParksWithActivity from "./components/pages/ActivityParks";
 import ParksContainingActivity from "./components/API/ParksContainingActivity";
 import ActivityParks from "./components/pages/ActivityParks";
+import ParkInfo from "./components/pages/ParkInfo";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route path="/parks" exact component={Park} />
 
           <Route path="/parkactivity" exact component={ActivityParks} />
+
+          <Route path="/parkinfo" exact component={ParkInfo} />
 
           {/*<Route path="products" component={Products} />
           <Route path="sign-up" component={Sign - up} />  */}
