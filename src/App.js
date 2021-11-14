@@ -6,6 +6,8 @@ import Home from "./components/pages/Home";
 import Footer from "./components/Footer";
 import ActivitySearch from "./components/pages/ActivitySearch";
 import Webcam from "./components/pages/WebcamSearch";
+import WebcamPhotos from "./components/pages/DisplayWebcamPhotos";
+
 import Park from "./components/pages/ParkNames";
 
 import ParksWithActivity from "./components/pages/ActivityParks";
@@ -27,6 +29,8 @@ function App() {
           <Route path="/parkactivity" exact component={ActivityParks} />
 
           <Route path="/parkinfo" exact component={ParkInfo} />
+
+          <Route path="/webcamphotos" exact component={WebcamPhotos} />
 
           {/*<Route path="products" component={Products} />
           <Route path="sign-up" component={Sign - up} />  */}

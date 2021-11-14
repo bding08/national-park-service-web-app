@@ -8,25 +8,25 @@ const WebcamAPIParkSearch = ({ placeholder }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
-  const [parkName, setParkName] = useState({
+  const [parkWebCamURLs, setParkWebCamURLs] = useState({
     data: null,
   });
 
-  const url = `https://developer.nps.gov/api/v1/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=465`;
+  const webCamURL = `https://developer.nps.gov/api/v1/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=465`;
 
   useEffect(() => {
-    setParkName({
+    setParkWebCamURLs({
       data: null,
     });
-    axios.get(url).then((response) => {
-      setParkName(response.data);
+    axios.get(webCamURL).then((response) => {
+      setParkWebCamURLs(response.data);
     });
-  }, [url]);
+  }, [webCamURL]);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = parkName.data.filter((value) => {
+    const newFilter = parkWebCamURLs.data.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -63,8 +63,8 @@ const WebcamAPIParkSearch = ({ placeholder }) => {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem">
-                <p>{value.fullName} </p>
+              <a className="dataItem" href="/webcamphotos">
+                <p>{value.name} </p>
               </a>
             );
           })}
