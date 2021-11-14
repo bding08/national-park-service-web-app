@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import CardItem from "../CardItem";
 
 const WebcamPhotos = (props) => {
   const parkCode = props.webCamParkCode;
 
   const webcamsURL = `https://developer.nps.gov/api/v1/webcams?parkCode=${parkCode}&api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=196`;
+
+  let parkName = null;
 
   const [parkWebcamURLs, setParkWebcamURLs] = useState({
     data: null,
@@ -33,9 +36,15 @@ const WebcamPhotos = (props) => {
     ));
   }
 
+  if (parkWebcamURLs.data) {
+    parkWebcamURLs.data.map((c) => (
+      <div>{(parkName = c.relatedParks[0].fullName)}</div>
+    ));
+  }
+
   return (
     <div>
-      <h1 className="font-bold text-2x1 mb-3"> {parkCode} Park Webcams</h1>
+      <h1 className="font-bold text-2x1 mb-3"> {parkName} Park Webcams</h1>
       {content}
     </div>
   );
