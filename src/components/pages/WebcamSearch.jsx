@@ -1,6 +1,5 @@
 import React from "react";
 import WebcamsAPI from "../API/WebcamAPIParkSearch";
-import ParkNameSearch from "../API/ParkNameSearch";
 
 const WebcamSearch = () => {
   return (

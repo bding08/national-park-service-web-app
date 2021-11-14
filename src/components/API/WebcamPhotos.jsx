@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const WebcamPhotos = () => {
-  // const parkWebcams = props.parkWebcams;
+const WebcamPhotos = (props) => {
+  const parkCode = props.parkCode;
+  console.log("web cam park code " + props.webCamParkCode);
 
-  const webcamsURL = `https://developer.nps.gov/api/v1/webcams?parkCode=gumo&api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=196`;
+  const webcamsURL = `https://developer.nps.gov/api/v1/webcams?parkCode=${parkCode}&api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=196`;
 
   const [parkWebcamURLs, setParkWebcamURLs] = useState({
     data: null,

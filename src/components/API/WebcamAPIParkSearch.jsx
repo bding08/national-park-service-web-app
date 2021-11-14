@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import React, { useState, useEffect } from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import CloseIcon from "@material-ui/icons/Close";
@@ -62,10 +64,20 @@ const WebcamAPIParkSearch = ({ placeholder }) => {
       {filteredData.length != 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
+            console.log(value);
             return (
-              <a className="dataItem" href="/webcamphotos">
-                <p>{value.name} </p>
-              </a>
+              <Link
+                className="dataItem"
+                to={{
+                  pathname: "/webcamphotos",
+                  state: { parkCode: value.parkCode },
+                }}
+              >
+                {value.fullName}
+              </Link>
+              // <a className="dataItem" href="/webcamphotos">
+              //   <p>{value.name} </p>
+              // </a>
             );
           })}
         </div>
