@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ActivityAPI from "./backupFILE";
 
 const ParkAPIInfo = (props) => {
   const parkCode = props.parkCode;
 
   const parkInfoURL = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb`;
 
-  console.log(parkInfoURL);
   const [parkInfo, setParkInfo] = useState({
     data: null,
     // activity: props.activty,
@@ -22,6 +22,14 @@ const ParkAPIInfo = (props) => {
     });
   }, [parkInfoURL]);
 
+  let content = null;
+
+  if (parkInfo.data) {
+    content = parkInfo.activities.map((parkActivityInfo) => (
+      <div>{parkActivityInfo.name}</div>
+    ));
+  }
+  console.log(content);
   return (
     <div>
       <h1 className="font-bold text-2x1 mb-3">
@@ -29,7 +37,9 @@ const ParkAPIInfo = (props) => {
       </h1>
       <a className="dataItem">
         <p> Description: {parkInfo.description} </p>
-        <p> Latitude: {parkInfo.latitude}</p>
+        <p>Latitude and Longitude: {parkInfo.latLong}</p>
+
+        <p>Activities: {content}</p>
       </a>
     </div>
   );

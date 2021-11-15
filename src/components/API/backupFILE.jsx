@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ActivityAPI.css";
 
 function ActivityAPI() {
   const url = `https://developer.nps.gov/api/v1/activities?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb`;

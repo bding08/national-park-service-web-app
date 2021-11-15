@@ -16,6 +16,10 @@
   font-size: 3rem;
 }
 
+.body {
+  min-height: 70%;
+}
+
 .activities {
   background-image: url("./images/img-2.jpg");
   background-position: center;
@@ -44,10 +48,9 @@
 }
 
 .ActivitySearch {
-  width: 100vw;
   height: 100vh;
   display: flex;
+  background-color: blue;
   align-items: center;
-  flex-direction: column;
   font-family: "Nunito", sans-serif;
 }

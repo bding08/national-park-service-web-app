@@ -40,7 +40,7 @@ const WebcamPhotos = (props) => {
                     src={image.url}
                     text={image.caption}
                     label="Adventure"
-                    path="/activities"
+                    //path={image.url}
                   />
                   // <img src={image.url} alt={image.altText} />
                 ))}

@@ -13,15 +13,10 @@ const HeroSection = () => {
       <div className="hero-btns">
         <Button
           className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
-        >
-          GET STARTED
-        </Button>
-        <Button
-          className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
+          href="google.com"
+          target="_blank"
         >
           EXPLORE THE PARKS <i className="far fa-play-circle" />
         </Button>

@@ -47,20 +47,7 @@ const ParksContainingActivity = (props) => {
     <div>
       <div>
         <h1 className="font-bold text-2x1 mb-3">Parks Containing {activity}</h1>
-        {/* <Link
-        className="dataItem"
-        to={{
-          pathname: "/parkinfo",
-          state: parkContainingActivity.parkCode,
-        }}
-      >
         {content}
-      </Link> */}
-
-        {/* <a className="dataItem" href="/parkinfo"> */}
-        {content}
-
-        {/* </a> */}
       </div>
     </div>
   );

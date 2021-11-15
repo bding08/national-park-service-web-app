@@ -4,7 +4,7 @@ import WebcamsAPI from "../API/WebcamAPIParkSearch";
 const WebcamSearch = () => {
   return (
     <div>
-      <WebcamsAPI placeholder="Enter a Park name for photos..." />
+      <WebcamsAPI placeholder="Enter a Park Name ..." />
     </div>
   );
 };

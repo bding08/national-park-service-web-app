@@ -1,6 +1,13 @@
+.search {
+}
+
 .searchInputs {
-  margin-top: 30px;
   display: flex;
+  padding-left: 30%;
+  padding-right: 30%;
+  min-height: 300px;
+  align-items: center;
+  align-content: center;
 }
 
 .search input {
@@ -9,14 +16,13 @@
   border-radius: 2px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  font-size: 18px;
+  font-size: 36px;
   padding: 15px;
-  height: 30px;
-  width: 300px;
+  height: 100px;
 }
 
 .searchIcon {
-  height: 60px;
+  height: 40px;
   width: 50px;
   background-color: white;
   display: grid;
@@ -32,12 +38,14 @@ input:focus {
 
 .dataResult {
   margin-top: 5px;
-  width: 300px;
+  width: 450px;
   height: 200px;
+  margin-left: 30%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
+  margin-top: -110px;
 }
 
 .dataResult::-webkit-scrollbar {
@@ -50,6 +58,7 @@ input:focus {
   display: flex;
   align-items: center;
   color: black;
+  padding-left: 5%;
 }
 
 .dataItem p {
