@@ -1,9 +1,10 @@
 .search {
+  min-height: 800px;
 }
 
 .searchInputs {
   display: flex;
-  padding-left: 30%;
+  padding-left: 33%;
   padding-right: 30%;
   min-height: 300px;
   align-items: center;
@@ -40,7 +41,7 @@ input:focus {
   margin-top: 5px;
   width: 450px;
   height: 200px;
-  margin-left: 30%;
+  margin-left: 34%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;

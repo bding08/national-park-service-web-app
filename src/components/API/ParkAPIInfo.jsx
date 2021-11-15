@@ -45,10 +45,10 @@ const ParkAPIInfo = (props) => {
           <p>Park URL: {parkInfo.url} </p>
         </a>
 
-        <p>
+        {/* <p>
           Monday Operating Hours:
           {parkInfo.entranceFees[0].cost}
-        </p>
+        </p> */}
 
         {/* <p>Contact Information: {contacts}</p> */}
       </a>

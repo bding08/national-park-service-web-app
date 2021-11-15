@@ -17,13 +17,13 @@ const WebcamAPIParkSearch = ({ placeholder }) => {
   const webCamURL = `https://developer.nps.gov/api/v1/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=465`;
 
   useEffect(() => {
-    setParkWebCamURLs({
-      data: null,
-    });
+    // setParkWebCamURLs({
+    //   data: null,
+    // });
     axios.get(webCamURL).then((response) => {
       setParkWebCamURLs(response.data);
     });
-  }, [webCamURL]);
+  }, []);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;

@@ -18,7 +18,7 @@ const HeroSection = () => {
           // href="google.com"
           // target="_blank"
         >
-          EXPLORE THE PARKS <i className="far fa-play-circle" />
+          WATCH FOR YOURSELF <i className="far fa-play-circle" />
         </Button>
       </div>
     </div>
