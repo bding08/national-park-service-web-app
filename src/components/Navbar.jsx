@@ -58,17 +58,8 @@ const Navbar = () => {
                 Parks
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP </Button>}
+          {/* {button && <Button buttonStyle="btn--outline">SIGN UP </Button>} */}
         </div>
       </nav>
     </>

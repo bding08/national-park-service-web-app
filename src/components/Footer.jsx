@@ -6,7 +6,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-container">
-      <section className="footer-subscription">
+      {/* <section className="footer-subscription">
         <p className="footer-subscipriton-heading">
           Join the Adventure newsletter to receive our best park deals
         </p>
@@ -24,9 +24,9 @@ const Footer = () => {
             <Button buttonStyle="btn--outline">Subscribe</Button>
           </form>
         </div>
-      </section>
+      </section> */}
       <div className="footer-links">
-        <div className="footer-link-wrapper">
+        {/* <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
@@ -43,8 +43,8 @@ const Footer = () => {
             <Link to="/"> Investors </Link>
             <Link to="/"> Terms of Service </Link>
           </div>
-        </div>
-        <div className="footer-link-wrapper">
+        </div> */}
+        {/* <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
@@ -53,15 +53,7 @@ const Footer = () => {
             <Link to="/"> Investors </Link>
             <Link to="/"> Terms of Service </Link>
           </div>
-          <div className="footer-link-items">
-            <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
-            <Link to="/"> Testimonials</Link>
-            <Link to="/"> Careers </Link>
-            <Link to="/"> Investors </Link>
-            <Link to="/"> Terms of Service </Link>
-          </div>
-        </div>
+        </div> */}
       </div>
       <section className="social-media">
         <div className="social-media-wrap">

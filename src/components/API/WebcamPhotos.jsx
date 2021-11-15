@@ -13,7 +13,6 @@ const WebcamPhotos = (props) => {
 
   const [parkWebcamURLs, setParkWebcamURLs] = useState({
     data: null,
-    // activity: props.activty,
   });
 
   useEffect(() => {
@@ -26,7 +25,6 @@ const WebcamPhotos = (props) => {
   }, [webcamsURL]);
 
   let content = null;
-  console.log(content);
 
   if (parkWebcamURLs.data) {
     if (parkWebcamURLs.total > 0) {

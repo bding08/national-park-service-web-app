@@ -9,14 +9,14 @@ const HeroSection = () => {
     <div className="hero-container">
       <video src={video1} autoPlay loop muted />
       <h1>ADVENTURE AWAITS</h1>
-      <p> What are you waiting for? </p>
+      <p> Explore National Parks Today! </p>
       <div className="hero-btns">
         <Button
           className="btns"
           buttonStyle="btn--primary"
           buttonSize="btn--large"
-          href="google.com"
-          target="_blank"
+          // href="google.com"
+          // target="_blank"
         >
           EXPLORE THE PARKS <i className="far fa-play-circle" />
         </Button>
