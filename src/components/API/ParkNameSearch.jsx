@@ -15,15 +15,11 @@ const ParkNameSearch = ({ placeholder }) => {
   const url = `https://developer.nps.gov/api/v1/parks?api_key=F86AM1ZQ4ihB8e93PVICva7sATwOw0YaC0oXvIVb&limit=465`;
 
   useEffect(() => {
-    console.log("hello");
     axios.get(url).then((response) => {
       setParkName(response.data);
       console.log(response.data);
     });
   }, []);
-
-  console.log("sample1: ");
-  console.log(parkName);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;

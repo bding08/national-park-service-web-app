@@ -16,9 +16,6 @@ function ActivityAPISearch({ placeholder }) {
   });
 
   useEffect(() => {
-    setActivities({
-      data: null,
-    });
     axios.get(url).then((response) => {
       setActivities(response.data);
     });
@@ -29,7 +26,7 @@ function ActivityAPISearch({ placeholder }) {
     //     data: null,
     //   });
     // });
-  }, [url]);
+  }, []);
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;

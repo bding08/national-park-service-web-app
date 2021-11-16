@@ -1,10 +1,14 @@
 .search {
-  min-height: 800px;
+  min-height: 700px;
+}
+
+.activity__results {
+  padding-left: 35%;
 }
 
 .searchInputs {
   display: flex;
-  padding-left: 33%;
+  padding-left: 35%;
   padding-right: 30%;
   min-height: 300px;
   align-items: center;
@@ -41,7 +45,7 @@ input:focus {
   margin-top: 5px;
   width: 450px;
   height: 200px;
-  margin-left: 34%;
+  margin-left: 36%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;

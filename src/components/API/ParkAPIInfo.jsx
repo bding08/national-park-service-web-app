@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ActivityAPI from "./backupFILE";
+import "./parkInfo.css";
 
 const ParkAPIInfo = (props) => {
   const parkCode = props.parkCode;
@@ -13,12 +14,34 @@ const ParkAPIInfo = (props) => {
     // activity: props.activty,
   });
 
+  const [opHrs, setOpHrs] = useState({ data: null });
+
+  const [contacts, setContacts] = useState({ voice: "", email: "" });
+
   useEffect(() => {
     setParkInfo({
       data: null,
     });
     axios.get(parkInfoURL).then((response) => {
       setParkInfo(response.data.data[0]);
+    });
+  }, [parkInfoURL]);
+
+  useEffect(() => {
+    axios.get(parkInfoURL).then((response) => {
+      setParkInfo(response.data.data[0]);
+      setOpHrs(response.data.data[0].operatingHours[0].standardHours);
+    });
+  }, [parkInfoURL]);
+
+  useEffect(() => {
+    axios.get(parkInfoURL).then((response) => {
+      setParkInfo(response.data.data[0]);
+      setOpHrs(response.data.data[0].operatingHours[0].standardHours);
+      setContacts({
+        voice: response.data.data[0].contacts.phoneNumbers[0].phoneNumber,
+        email: response.data.data[0].contacts.emailAddresses[0].emailAddress,
+      });
     });
   }, [parkInfoURL]);
 
@@ -38,19 +61,37 @@ const ParkAPIInfo = (props) => {
         {parkInfo.fullName} Park Information
       </h1>
       <a className="dataItem">
-        <p> Description: {parkInfo.description} </p>
-        <p>Latitude and Longitude: {parkInfo.latLong}</p>
-        <p>Directions Information: {parkInfo.directionsInfo}</p>
+        <h2 className="headerTwo">Description</h2>
+
+        <p> {parkInfo.description} </p>
+
+        <h2>Latitude and Longitude </h2>
+        <p>{parkInfo.latLong}</p>
+
+        <h2>Directions Information </h2>
+        <p>{parkInfo.directionsInfo}</p>
+
+        <h2>Park URL </h2>
         <a className="dataItem" href={parkInfo.url} target="_blank">
-          <p>Park URL: {parkInfo.url} </p>
+          <p>{parkInfo.url} </p>
         </a>
 
-        {/* <p>
-          Monday Operating Hours:
-          {parkInfo.entranceFees[0].cost}
-        </p> */}
+        <h2>Operating Hours</h2>
+        <p>Sunday: {opHrs.sunday}</p>
+        <p>Monday: {opHrs.monday}</p>
+        <p>Tuesday: {opHrs.tuesday}</p>
+        <p>Wednesday: {opHrs.wednesday}</p>
+        <p>Thursday: {opHrs.thursday}</p>
+        <p>Friday: {opHrs.friday}</p>
+        <p>Saturday: {opHrs.saturday}</p>
 
-        {/* <p>Contact Information: {contacts}</p> */}
+        <h2> Contacts</h2>
+        <p>Phone number: {contacts.voice}</p>
+        <p>Email: {contacts.email}</p>
+        <p></p>
+
+        <h2>Weather</h2>
+        <p>{parkInfo.weatherInfo}</p>
       </a>
     </div>
   );

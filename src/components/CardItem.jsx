@@ -9,9 +9,8 @@ function CardItem(props) {
         className="cards__item"
         onClick={(e) => {
           e.preventDefault();
-          const url =
-            "https://www.nps.gov/common/uploads/cropped_image/4694C878-9683-31A4-D7A86059852B7750.jpg";
-          window.open(url, "_blank");
+
+          window.open(props.src, "_blank");
         }}
       >
         <Link className="cards__item__link">

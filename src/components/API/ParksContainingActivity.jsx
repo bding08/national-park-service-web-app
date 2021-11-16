@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./APISearchBar.css";
 
 const ParksContainingActivity = (props) => {
   const activity = props.activity;
@@ -45,10 +46,8 @@ const ParksContainingActivity = (props) => {
 
   return (
     <div>
-      <div>
-        <h1 className="font-bold text-2x1 mb-3">Parks Containing {activity}</h1>
-        {content}
-      </div>
+      <h1 className="font-bold text-2x1 mb-3">Parks Containing {activity}</h1>
+      <div className="activity__results">{content}</div>
     </div>
   );
 };
