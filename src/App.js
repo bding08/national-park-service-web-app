@@ -22,6 +22,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/national-park-service-web-app" exact component={Home} />
           <Route path="/activities" exact component={ActivitySearch} />
           <Route path="/webcam" exact component={Webcam} />
           <Route path="/parks" exact component={Park} />
